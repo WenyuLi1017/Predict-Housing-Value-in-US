@@ -21,7 +21,7 @@ First, we get the dummy variables, and we get 310 features, such as AMTE (Averag
 ### LASSO regression:
 
 <p align="center"><img src="pic/lasso_lambda.jpg" alt="Routing" width="500"/></p>
-<p align="center"><img src="pic/lasso_nonzero_feature.jpg" alt="Routing" width="500"/></p>
+<p align="center"><img src="pic/lasso_nozero_feature.jpg" alt="Routing" width="500"/></p>
 By using cross-validation, the model shows that the best lambda is between -6 and -4. After selecting the best lambda and using the same variables, the LASSO model set 142 non-zero variables and shows that the minimum out-of-sample root mean square error is 42.79308.
 
 ### Regression Tree
