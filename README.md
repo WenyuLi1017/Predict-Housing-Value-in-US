@@ -20,21 +20,27 @@ First, we get the dummy variables, and we get 310 features, such as AMTE (Averag
 
 ### LASSO regression:
 
+<p align="center"><img src="pic/lasso_lambda.jpg" alt="Routing" width="500"/></p>
+<p align="center"><img src="pic/lasso_nonzero_feature.jpg" alt="Routing" width="500"/></p>
 By using cross-validation, the model shows that the best lambda is between -6 and -4. After selecting the best lambda and using the same variables, the LASSO model set 142 non-zero variables and shows that the minimum out-of-sample root mean square error is 42.79308.
 
 ### Regression Tree
 
+<p align="center"><img src="pic/tree_full.jpg" alt="Routing" width="500"/></p>
+<p align="center"><img src="pic/tree_size.jpg" alt="Routing" width="500"/></p>
+<p align="center"><img src="pic/tree_pruning.jpg" alt="Routing" width="500"/></p>
 After pruning the original tree, the model shows that 6 is the best size of the pruning tree, and the minimum out of sample root mean square error is 43.32149.
 
 ### Ramdom Forest
 
+<p align="center"><img src="pic/rf_feature.jpg" alt="Routing" width="500"/></p>
 After conducting 200 bootstrap samples and choosing 5 as the size of nodes, the out of sample root mean square error of this model is 44.13945.
 
 ### Model Comparation
 
 Box plot drawn based on the results of 10 random samples.
 
-
+<p align="center"><img src="pic/rmse_compare.jpg" alt="Routing" width="500"/></p>
 
 According to the root mean square error comparison, the model with the smallest mean square error of these 10 random samples is the Random Forest model. Although the one-time root mean square error comparison shows that the Random Forest model performs not better than other models, random pick-up samples' mean of 10 times shows that the Random Forest model performs best.
 
@@ -43,5 +49,7 @@ According to the root mean square error comparison, the model with the smallest 
 1/5 of the sample is used as the prediction dataset and the best model-random forest model is used to predict the value of this sample. This paper define the accuracy of the prediction model by using the formula:
 
 accuracy = 1 – abs (predict value – true value)/true value.
+
+<p align="center"><img src="pic/accuracy.jpg" alt="Routing" width="500"/></p>
 
 Although some extreme prediction results will affect the average accuracy of the prediction sample, the accuracy of the 3/4 sample is higher than 0.64, and the accuracy of half sample is higher than 0.79, which shows that our model has a good performance in the prediction dataset.
